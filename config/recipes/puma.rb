@@ -7,6 +7,7 @@ set_default(:puma_config) { "#{shared_path}/config/puma.rb" }
 namespace :puma do
 	desc "Setup puma config"	
 	task :setup, roles: :app do
+		run "mkdir -p #{shared_path}/config"
 		template "puma.rb.erb", puma_config
 	end
 	after "deploy:setup", "puma:setup"
