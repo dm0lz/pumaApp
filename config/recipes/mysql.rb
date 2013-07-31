@@ -34,5 +34,5 @@ namespace :mysql do
   task :symlink, roles: :app do
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
   end
-  after "mysql:setup", "mysql:symlink"
+  after "deploy:finalize_update", "mysql:symlink"
 end
