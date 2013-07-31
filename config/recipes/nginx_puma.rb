@@ -3,7 +3,7 @@ namespace :nginx do
 	desc "Setup nginx configuration for this application"
 
 	task :setup, roles: :web do
-		template "puma_unicorn.rb.erb", "/tmp/puma_conf"
+		template "puma.rb.erb", "/tmp/puma_conf"
 		run "#{sudo} mv /tmp/puma_conf /etc/nginx/sites-enabled/#{application}"
 		run "#{sudo} rm -f /etc/nginx/sites-enabled/default"
 		restart
