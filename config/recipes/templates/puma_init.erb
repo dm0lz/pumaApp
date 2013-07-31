@@ -13,7 +13,7 @@ set -e
 # Feel free to change any of the following variables for your app:
 TIMEOUT=${TIMEOUT-60}
 APP_ROOT=<%= current_path %>
-PID=<%= unicorn_pid %>
+PID=<%= puma_pid %>
 CMD="cd <%= current_path %>; bundle exec puma -e production -b unix:/tmp/puma.<%= application %>.sock"
 AS_USER=<%= puma_user %>
 set -u
