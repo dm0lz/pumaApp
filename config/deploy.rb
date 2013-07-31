@@ -5,6 +5,8 @@ load "config/recipes/base"
 load "config/recipes/node"
 #load "config/recipes/nginx"
 #load "config/recipes/unicorn"
+load "config/recipes/nginx_puma"
+load "config/recipes/puma"
 load "config/recipes/mysql"
 load "config/recipes/rvm"
 
